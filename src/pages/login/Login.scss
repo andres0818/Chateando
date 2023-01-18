@@ -1,4 +1,28 @@
+$background-botones: rgb(0, 128, 85);
+
+@mixin centrarModal {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin botones ($ancho, $color,$font-size) {
+    width: $ancho;
+    height: 5vh;
+    background: $color ;
+    border: none;
+    font-size: $font-size;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+}
+
+
+
+
 .login {
+
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,8 +32,8 @@
 
     &__container {
         background-color: rgb(204, 201, 201);
-        width: 60vh;
-        height: 40vh;
+        width: 413px;
+        height: 288px;
         padding: 20px;
         border-radius: 12px;
         box-shadow: 0 0 10px 4px gray;
@@ -18,8 +42,7 @@
     &__titulo {
         font-size: 60px;
         color: rgb(0, 128, 85);
-
-
+        margin: 5% 0 5% 0;
     }
 
     &__form {
@@ -32,7 +55,7 @@
 
     &__formulario {
         border: none;
-        height: 50px;
+        height: 5vh;
         border-radius: 5px;
         width: 100%;
 
@@ -40,17 +63,56 @@
 
     &__submit {
 
-        background: rgb(0, 128, 85);
-        color: white;
-        border: none;
-        width: 50%;
-        height: 40px;
-        font-size: 25px;
-        font-weight: bold;
-        border-radius: 5px;
+
+        @include botones(50%, $background-botones,25px);
 
         &:hover {
             opacity: 0.5;
         }
+    }
+
+
+
+    &__containerAlerta {
+
+        position: fixed;
+        background-color: rgba(128, 128, 128, 0.747);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include centrarModal
+    }
+
+    &__alerta {
+        
+        @include centrarModal;
+        flex-direction: column;
+        width: 50%;
+        height: 50%;
+        background-color: white;
+        border-radius: 12px;
+
+    }
+
+    &__url {
+                
+        @include centrarModal();
+        @include botones(20%, $background-botones,25px);
+        text-decoration: none
+
+    }
+
+    &__devolverLogin{
+        
+        @include botones(30%,red,20px);
+        
+    }
+
+    &__botonesAlerta{
+        @include centrarModal();
+        width: 100%;
+        gap: 20px;
+
     }
 }
