@@ -1,0 +1,101 @@
+$background-botones: rgb(0, 128, 85);
+
+@mixin centrar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin botones ($ancho, $color, $font-size) {
+    width: $ancho;
+    height: 5vh;
+    background: $color ;
+    border: none;
+    font-size: $font-size;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+}
+
+
+
+
+.noLogin {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../login/img/Default\ WhatsApp\ background\ for\ people\ who\ lost\ it_\ Requested\ by\ u_Marvin_der_kuhle.jpeg');
+    @include centrar();
+
+    &__contenedor {
+
+        @include centrar();
+        background-color: rgb(204, 201, 201);
+        width: 413px;
+        height: 288px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px 4px gray;
+        flex-direction: column;
+
+    }
+
+
+    &__login {
+        @include botones(40%, $background-botones, 25px);
+        @include centrar();
+        text-decoration: none
+    }
+
+
+}
+
+
+
+
+
+.mensajes {
+    display: flex;
+    flex-direction: row;
+
+    &__menu {
+        width: 45vh;
+    }
+
+
+    &__containerPerfil {
+
+        @include centrar();
+        height: 70px;
+        background-color: rgba(211, 210, 210, 0.63);
+        justify-content: flex-start;
+        border-right: solid black 1px;
+    }
+
+    &__perfil {
+        width: 55px;
+        height: 55px;
+        border-radius: 50px;
+        margin-left: 15px;
+        background-color: white;
+    }
+
+    &__containerBuscador {
+
+        @include centrar();
+        background-color: rgba(211, 210, 210, 0.349);
+
+    }
+
+    &__buscador {
+        margin: 10px auto;
+        padding: 8px;
+        width: 70%;
+        height: 25px;
+        border-radius: 12px;
+        border: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+}
