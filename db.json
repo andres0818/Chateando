@@ -1,0 +1,27 @@
+{
+    "user":[
+        {
+            "id":0,
+            "nombre":"andres",
+            "numberphone":"3053499862",
+            "password":"0000",
+            "image":"https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/computer-user-icon.png"
+        },
+        {
+            "id":1,
+            "nombre":"angie",
+            "numberphone":"3008109670",
+            "password":"0000",
+            "image":"https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/female-user-icon.png"
+        }
+    ],
+    "messages":[
+        {
+            "sendBy":0,
+            "date":"fecha",
+            "hour":"hora",
+            "message":"mensaje enviado",
+            "flag":"Estado del mensaje"
+        }
+    ]
+}
