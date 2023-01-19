@@ -3,3 +3,32 @@ body{
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.cargando{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    animation: scalado 2s linear infinite;
+}
+
+@keyframes scalado{
+    0%{
+        transform: scale(100%);
+    };
+    25%{
+        transform: scale(120%);
+    };
+    50%{
+        transform: scale(100%);
+    };
+    75%{
+        transform: scale(120%);
+    };
+    100%{
+        transform: scale(100%);
+    }
+   
+}

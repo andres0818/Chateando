@@ -1,62 +1,66 @@
 {
-    "user": [
+  "user": [
+    {
+      "id": 0,
+      "nombre": "andres",
+      "celular": "3053499862",
+      "contraseña": "0000",
+      "perfil": "https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/computer-user-icon.png",
+      "estado": "Desconectado",
+      "mensajes": [
         {
-            "id": 0,
-            "nombre": "andres",
-            "celular": "3053499862",
-            "contraseña": "0000",
-            "perfil": "https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/computer-user-icon.png",
-            "estado": "Desconectado",
-            "mensajes": [
-                {
-                    "sendBy": 0,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "1 mensaje enviado de angie",
-                    "flag": "Estado del mensaje"
-                },{
-                    "sendBy": 1,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "2 mensaje enviado de angie",
-                    "flag": "Estado del mensaje"
-                },{
-                    "sendBy": 2,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "3 mensaje enviado de angie",
-                    "flag": "Estado del mensaje"
-                }
-            ]
+          "sendBy": 0,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "1 mensaje enviado de angie",
+          "flag": "Estado del mensaje"
         },
         {
-            "id": 1,
-            "nombre": "angie",
-            "celular": "3008109670",
-            "contraseña": "1111",
-            "perfil": "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/female-user-icon.png",
-            "estado": "Desconectado",
-            "mensajes": [
-                {
-                    "sendBy": 0,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "1 mensaje enviado de andres",
-                    "flag": "Estado del mensaje"
-                },{
-                    "sendBy": 1,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "2 mensaje enviado de andres",
-                    "flag": "Estado del mensaje"
-                },{
-                    "sendBy": 2,
-                    "date": "fecha",
-                    "hour": "hora",
-                    "mensaje": "3 mensaje enviado de andres",
-                    "flag": "Estado del mensaje"
-                }
-            ]
+          "sendBy": 1,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "2 mensaje enviado de angie",
+          "flag": "Estado del mensaje"
+        },
+        {
+          "sendBy": 2,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "3 mensaje enviado de angie",
+          "flag": "Estado del mensaje"
         }
-    ]
+      ]
+    },
+    {
+      "id": 1,
+      "nombre": "angie",
+      "celular": "3008109670",
+      "contraseña": "1111",
+      "perfil": "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/female-user-icon.png",
+      "estado": "Desconectado",
+      "mensajes": [
+        {
+          "sendBy": 0,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "1 mensaje enviado de andres",
+          "flag": "Estado del mensaje"
+        },
+        {
+          "sendBy": 1,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "2 mensaje enviado de andres",
+          "flag": "Estado del mensaje"
+        },
+        {
+          "sendBy": 2,
+          "date": "fecha",
+          "hour": "hora",
+          "mensaje": "3 mensaje enviado de andres",
+          "flag": "Estado del mensaje"
+        }
+      ]
+    }    
+  ]
 }

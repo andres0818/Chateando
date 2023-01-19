@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Chats.scss'
 import emote from '../img/smile.svg'
 import archivos from '../img/paperclip.svg'
 import enviar from '../img/send.svg'
+import { createUser } from '../../../api/getApi'
 
 
 const Chats = ({ mensajes }) => {
 
   const data = mensajes[0]
+  const [inputText, setInputText] = useState("")
 
 
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    createUser(inputText)
+  }
+
+  const handleForm = (e) => {
+    setInputText(e.target.value)
+  }
 
 
 
@@ -19,7 +29,7 @@ const Chats = ({ mensajes }) => {
 
     return (
 
-      <h1>Cargando...</h1>
+      <h1 className='cargando'>Cargando...</h1>
 
     )
 
@@ -43,10 +53,14 @@ const Chats = ({ mensajes }) => {
             })}
           </div>
           <div className='chats__input'>
-            <img src={emote} alt="" />
-            <img src={archivos} alt="" />
-            <input className='chats__buscador' type="text" />
-            <img src={enviar} alt="" />
+            <form onSubmit={(e) => handleSubmit(e)} className='chats__formulario'>
+              <img src={emote} alt="" />
+              <img src={archivos} alt="" />
+              <input onChange={(e) => handleForm(e)} value={inputText} placeholder="Mensaje" className='chats__buscador' type="text" />
+              <button type='submit'>
+                <img src={enviar} alt="" />
+              </button>
+            </form>
           </div>
         </div>
       </div>

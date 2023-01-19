@@ -1,14 +1,15 @@
 .chats {
     width: calc(1920px - 443.44px);
     height: 100vh;
-    background-color: rgba(211, 210, 210, 0.63);
 
 
     &__containerPerfil {
+        
+        background-color: rgba(211, 210, 210, 0.63);
         height: 70px;
         display: flex;
         align-items: center;
-        margin-left: 10px;
+        padding-left: 12px;
     }
 
     &__perfil {
@@ -47,19 +48,20 @@
 
     }
 
-    &__input {
-        width: 90%;
-        height: 70px;
-        background-color: rgb(226, 224, 224);
+    &__formulario{
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 5%;
         gap: 50px;
-        
 
-        
+    }
 
+    &__input {
+        width: 90%;
+        height: 70px;
+        padding: 0 5%;    
+        background-color: rgb(226, 224, 224);
     }
 
     &__buscador {
