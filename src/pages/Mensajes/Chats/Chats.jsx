@@ -8,7 +8,7 @@ import { createUser, mostrarMensaje } from '../../../api/getApi'
 
 const Chats = ({ seccionIniciada, mensajes, dataUser }) => {
 
-  console.log(seccionIniciada);
+ 
   const [mensajecitos, setMensajecitos] = useState([])
   const recibeMensaje = dataUser.filter((e) => e !== seccionIniciada)[0]
 
@@ -102,8 +102,8 @@ const Chats = ({ seccionIniciada, mensajes, dataUser }) => {
 
             {mensajeEnviado.map((e, index) => {
               return (
-                <div className='chats__listaMensajesEnviador'>
-                  <div key={index} className='chats__mensaje'>
+                <div key={index} className='chats__listaMensajesEnviador'>
+                  <div className='chats__mensaje'>
                     <h3 >{e.mensaje}</h3>
                     <p>{e.hora}</p>
                   </div>
