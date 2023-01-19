@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import "./ListaChats.scss"
 
-function ListaChats({ data,getUsuario,dataUsuario }) {
+function ListaChats({ data,getUsuario,dataUsuario,ultimoMensaje }) {
 
+    
+
+    const mensajes=ultimoMensaje.filter((e)=>e.sendby!==dataUsuario.id)
+    const lengthMensajes =mensajes.length 
+    const mostrarUltimoMensaje= mensajes[lengthMensajes-1]
+    console.log(mostrarUltimoMensaje);
+    
    const chatsLista= data.filter((e)=>e!==dataUsuario)
 
     return (
@@ -22,9 +30,9 @@ function ListaChats({ data,getUsuario,dataUsuario }) {
                                     <div className='listaChats__data'>
                                         <div className='listaChats__info' >
                                             <h1> {e.nombre} </h1>
-                                            <p>{infoMensaje.date}</p>
+                                            <p>{mostrarUltimoMensaje.date}</p>
                                         </div>
-                                        <p>✔✔{infoMensaje.mensaje} </p>
+                                        <p>✔✔{mostrarUltimoMensaje.mensaje} </p>
                                     </div>
                                 </Link>
                             </li>

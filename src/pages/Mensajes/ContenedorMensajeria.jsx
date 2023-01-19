@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import './ContenedorMensajeria.scss'
 import ListaChats from './ListaChats/ListaChats';
 
-const ContenedorMensajeria = ({ dataUsuario, data, getUsuario }) => {
+const ContenedorMensajeria = ({ dataUsuario, data, getUsuario, ultimoMensaje }) => {
 
 
     const UsuarioValido = () => {
@@ -36,7 +36,8 @@ const ContenedorMensajeria = ({ dataUsuario, data, getUsuario }) => {
                             <input className='mensajes__buscador' type="text" placeholder='Buscaro iniciar un nuevo chat' />
                         </div>
                         <ListaChats
-                         dataUsuario={dataUsuario}
+                            ultimoMensaje={ultimoMensaje}
+                            dataUsuario={dataUsuario}
                             getUsuario={getUsuario}
                             data={data} />
                     </div>

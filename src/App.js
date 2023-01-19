@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import { getUsers, getMensaje } from "./api/getApi";
+import { getUsers, getMensaje, mostrarMensaje } from "./api/getApi";
 import Login from "./pages/login/Login";
 import ContenedorMensajeria from "./pages/Mensajes/ContenedorMensajeria";
 
@@ -13,6 +13,19 @@ function App() {
   const [data, setData] = useState(null)
   const [dataUsuario, setDataUsario] = useState('')
   const [mensajes, setMensajes] = useState([])
+  const [ultimoMensaje, setUltimoMensaje] = useState()
+
+
+
+  const traerMensajes = async () => {
+    const res = await mostrarMensaje("mensajes")
+    setUltimoMensaje(res.data)
+
+  }
+
+  useEffect(() => {
+    traerMensajes()
+  }, [])
 
   const getData = async () => {
     try {
@@ -54,6 +67,7 @@ function App() {
 
           <Route path="/mensajes" element={
             <ContenedorMensajeria
+              ultimoMensaje={ultimoMensaje}
               dataUsuario={dataUsuario} data={data}
               getUsuario={getUsuario}
             />} >
