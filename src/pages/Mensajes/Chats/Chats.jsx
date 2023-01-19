@@ -12,9 +12,9 @@ const Chats = ({ mensajes}) => {
 
   const [inputText, setInputText] = useState([])
   const [mensajeEnviado, setMensajeEnviado] = useState([])
+  const [value,setValue]=useState('')
 
   const today = new Date()
-  let value=""
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,6 +22,7 @@ const Chats = ({ mensajes}) => {
     /* createUser(mensajeEnviado) */
     setInputText([])
     console.log(mensajeEnviado);
+    setValue("")
 
   }
 
@@ -35,7 +36,7 @@ const Chats = ({ mensajes}) => {
       hora: today.toLocaleTimeString()
 
     })
-    console.log(inputText);
+    setValue(texto);
   }
 
 
