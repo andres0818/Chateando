@@ -31,7 +31,6 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
   const handleForm = (e) => {
     const texto = e.target.value
     const id = seccionIniciada.id
-    console.log(id);
     setInputText({
 
       sendby:id,
@@ -45,15 +44,14 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
   }
 
   const traerMensajes=async()=>{
-    const res = await mostrarMensaje(recibeMensaje.nombre)
+    const res = await mostrarMensaje(seccionIniciada.nombre)
     setMensajecitos(res.data)
-    console.log(res.data);
     
   }
   
   useEffect(() => {
     traerMensajes()
-  }, [])
+  },[])
   
 
 

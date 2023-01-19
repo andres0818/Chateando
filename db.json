@@ -63,64 +63,8 @@
       ]
     }
   ],
-  "andres": [
-    {
-      "sendby": 1,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "mensaje 1",
-      "hora": "13:21:53",
-      "id": 1
-    },
-    {
-      "sendby": 1,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "mensae 2",
-      "hora": "13:21:57",
-      "id": 2
-    }
-  ],
+  "andres": [],
   "angie": [
-    {
-      "sendby": 0,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "mensaje 3",
-      "hora": "13:22:26",
-      "id": 1
-    },
-    {
-      "sendby": 0,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "mensaje 4",
-      "hora": "13:22:31",
-      "id": 2
-    },
-    {
-      "sendby": 0,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "holas",
-      "hora": "13:43:30",
-      "id": 3
-    },
-    {
-      "sendby": 0,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "de nuevo yo",
-      "hora": "13:43:35",
-      "id": 4
-    },
-    {
-      "sendby": 0,
-      "date": "19/1/2023",
-      "flag": "envido",
-      "mensaje": "que pereza usted parce",
-      "hora": "13:44:12",
-      "id": 5
-    }
+    
   ]
 }
