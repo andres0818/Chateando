@@ -10,12 +10,16 @@ const Chats = ({ mensajes }) => {
 
   const data = mensajes[0]
   const [inputText, setInputText] = useState("")
+  const [mensajeEnviado, setMensajeEnviado] = useState([])
 
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    createUser(inputText)
+    /* createUser(inputText) */
+    setMensajeEnviado([...mensajeEnviado, inputText])
+    setInputText("")
+
   }
 
   const handleForm = (e) => {
@@ -51,7 +55,19 @@ const Chats = ({ mensajes }) => {
                 </div>
               )
             })}
+            <div className='chats__listaMensajesEnviador'>
+
+              {mensajeEnviado.map((e, index) => {
+                return (
+                  <div key={index} className='chats__mensaje'>
+                    <h3 >{e}</h3>
+                    <p>hora</p>
+                  </div>
+                )
+              })}
+            </div>
           </div>
+
           <div className='chats__input'>
             <form onSubmit={(e) => handleSubmit(e)} className='chats__formulario'>
               <img src={emote} alt="" />
