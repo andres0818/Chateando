@@ -6,32 +6,36 @@ import enviar from '../img/send.svg'
 import { createUser } from '../../../api/getApi'
 
 
-const Chats = ({ mensajes}) => {
+const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
+  const recibeMensaje=dataUser.filter((e)=>e!==seccionIniciada)[0]
+
 
   const data = mensajes[0]
 
   const [inputText, setInputText] = useState([])
   const [mensajeEnviado, setMensajeEnviado] = useState([])
-  const [value,setValue]=useState('')
+  const [value, setValue] = useState('')
 
   const today = new Date()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setMensajeEnviado([...mensajeEnviado, inputText])
-    /* createUser(mensajeEnviado) */
+    createUser(recibeMensaje.nombre,inputText)
     setInputText([])
-    console.log(mensajeEnviado);
     setValue("")
 
   }
 
   const handleForm = (e) => {
     const texto = e.target.value
-    const id = data.id
+    const id = seccionIniciada.id
     console.log(id);
     setInputText({
-      id: 0,
+
+      sendby:id,
+      date:today.toLocaleDateString(),
+      flag:"envido",
       mensaje: texto,
       hora: today.toLocaleTimeString()
 
@@ -56,6 +60,10 @@ const Chats = ({ mensajes}) => {
       <div className='chats'>
         <div className='chats__containerPerfil'>
           <img className='chats__perfil' src={data.perfil} alt="" />
+          <div className='chats__infoUsuario'>
+            <h3 >{data.nombre}</h3>
+            <p >{data.estado}</p>
+          </div>
         </div>
         <div className='chats__containerMensajes'>
           <div className='chats__listaMensajes'>

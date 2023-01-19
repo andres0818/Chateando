@@ -14,7 +14,6 @@ function App() {
   const [dataUsuario, setDataUsario] = useState('')
   const [mensajes, setMensajes] = useState([])
 
-
   const getData = async () => {
     try {
       const res = await getUsers()
@@ -28,7 +27,6 @@ function App() {
   useEffect(() => {
     getData()
   }, [])
-
 
 
   const getUsuario = async (id) => {
@@ -61,7 +59,8 @@ function App() {
             />} >
             <Route path="/mensajes/:mensajesid" element={
               <Chats
-                dataUsuario={dataUsuario}
+                dataUser={data}
+                seccionIniciada={dataUsuario}
                 mensajes={mensajes} />
             } />
           </Route>
