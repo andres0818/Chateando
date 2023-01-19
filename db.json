@@ -63,8 +63,90 @@
       ]
     }
   ],
-  "andres": [],
+  "andres": [
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "oite fran",
+      "hora": "15:03:37",
+      "id": 1
+    },
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "hola",
+      "hora": "15:15:20",
+      "id": 2
+    },
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "hola",
+      "hora": "15:17:00",
+      "id": 3
+    },
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "chao",
+      "hora": "15:17:02",
+      "id": 4
+    }
+  ],
   "angie": [
-    
+    {
+      "sendby": 0,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "que quiero mija",
+      "hora": "15:03:59",
+      "id": 1
+    },
+    {
+      "sendby": 0,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "la perra no se vene",
+      "hora": "15:04:09",
+      "id": 2
+    }
+  ],
+  "mensajes": [
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "hola",
+      "hora": "15:37:30",
+      "id": 1
+    },
+    {
+      "sendby": 1,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": " que mas",
+      "hora": "15:37:35",
+      "id": 2
+    },
+    {
+      "sendby": 0,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "bien y tu",
+      "hora": "15:38:09",
+      "id": 3
+    },
+    {
+      "sendby": 0,
+      "date": "19/1/2023",
+      "flag": "envido",
+      "mensaje": "que hacer",
+      "hora": "15:38:13",
+      "id": 4
+    }
   ]
 }

@@ -3,13 +3,14 @@ import './Chats.scss'
 import emote from '../img/smile.svg'
 import archivos from '../img/paperclip.svg'
 import enviar from '../img/send.svg'
-import { createUser,mostrarMensaje } from '../../../api/getApi'
+import { createUser, mostrarMensaje } from '../../../api/getApi'
 
 
-const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
+const Chats = ({ seccionIniciada, mensajes, dataUser }) => {
 
-  const[mesnajecitos,setMensajecitos]=useState([])
-  const recibeMensaje=dataUser.filter((e)=>e!==seccionIniciada)[0]
+  console.log(seccionIniciada);
+  const [mensajecitos, setMensajecitos] = useState([])
+  const recibeMensaje = dataUser.filter((e) => e !== seccionIniciada)[0]
 
   const data = mensajes[0]
 
@@ -22,7 +23,7 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setMensajeEnviado([...mensajeEnviado, inputText])
-    createUser(recibeMensaje.nombre,inputText)
+    createUser("mensajes", inputText)
     setInputText([])
     setValue("")
 
@@ -33,9 +34,9 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
     const id = seccionIniciada.id
     setInputText({
 
-      sendby:id,
-      date:today.toLocaleDateString(),
-      flag:"envido",
+      sendby: id,
+      date: today.toLocaleDateString(),
+      flag: "envido",
       mensaje: texto,
       hora: today.toLocaleTimeString()
 
@@ -43,16 +44,16 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
     setValue(texto);
   }
 
-  const traerMensajes=async()=>{
-    const res = await mostrarMensaje(seccionIniciada.nombre)
+  const traerMensajes = async () => {
+    const res = await mostrarMensaje("mensajes")
     setMensajecitos(res.data)
-    
+
   }
-  
+
   useEffect(() => {
     traerMensajes()
-  },[])
-  
+  }, [])
+
 
 
   if (data === undefined || data === null) {
@@ -75,27 +76,40 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
           </div>
         </div>
         <div className='chats__containerMensajes'>
-          <div className='chats__listaMensajes'>
 
-            {mesnajecitos.map((e, index) => {
+          <div className='chats__listaMensajes'>
+            {mensajecitos.map((e, index) => {
               return (
-                <div key={index} className='chats__mensaje'>
-                  <h3 >{e.mensaje}</h3>
-                  <p>{e.hour}</p>
+                <div key={index}>
+                  {seccionIniciada.id === e.sendby
+                    ?
+                    <div className='chats__listaMensajesEnviador'>
+                      <div className='chats__mensaje'>
+                        <h3 >{e.mensaje}</h3>
+                        <p>{e.hora}</p>
+                      </div>
+                    </div>
+                    :
+                    <div key={index} className='chats__mensaje'>
+                      <h3 >{e.mensaje}</h3>
+                      <p>{e.hour}</p>
+                    </div>
+                  }
+
                 </div>
               )
             })}
-            <div className='chats__listaMensajesEnviador'>
 
-              {mensajeEnviado.map((e, index) => {
-                return (
+            {mensajeEnviado.map((e, index) => {
+              return (
+                <div className='chats__listaMensajesEnviador'>
                   <div key={index} className='chats__mensaje'>
                     <h3 >{e.mensaje}</h3>
                     <p>{e.hora}</p>
                   </div>
-                )
-              })}
-            </div>
+                </div>
+              )
+            })}
           </div>
 
           <div className='chats__input'>
