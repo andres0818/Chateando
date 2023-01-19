@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Chats.scss'
 import emote from '../img/smile.svg'
 import archivos from '../img/paperclip.svg'
 import enviar from '../img/send.svg'
-import { createUser } from '../../../api/getApi'
+import { createUser,mostrarMensaje } from '../../../api/getApi'
 
 
 const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
-  const recibeMensaje=dataUser.filter((e)=>e!==seccionIniciada)[0]
 
+  const[mesnajecitos,setMensajecitos]=useState([])
+  const recibeMensaje=dataUser.filter((e)=>e!==seccionIniciada)[0]
 
   const data = mensajes[0]
 
@@ -43,7 +44,17 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
     setValue(texto);
   }
 
-
+  const traerMensajes=async()=>{
+    const res = await mostrarMensaje(recibeMensaje.nombre)
+    setMensajecitos(res.data)
+    console.log(res.data);
+    
+  }
+  
+  useEffect(() => {
+    traerMensajes()
+  }, [])
+  
 
 
   if (data === undefined || data === null) {
@@ -68,7 +79,7 @@ const Chats = ({ seccionIniciada,mensajes,dataUser }) => {
         <div className='chats__containerMensajes'>
           <div className='chats__listaMensajes'>
 
-            {data.mensajes.map((e, index) => {
+            {mesnajecitos.map((e, index) => {
               return (
                 <div key={index} className='chats__mensaje'>
                   <h3 >{e.mensaje}</h3>

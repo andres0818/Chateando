@@ -14,6 +14,10 @@ export const getMensaje = async (id) => {
 	return res
 }
 
+export const mostrarMensaje = async (usuario) => {
+	let res = await api.get(`/${usuario}`)
+	return res
+}
  export const createUser = async (usuario,newUser) => {
 	let res = await api.post(`/${usuario}`, newUser)
 	return res
