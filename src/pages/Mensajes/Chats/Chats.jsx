@@ -6,24 +6,36 @@ import enviar from '../img/send.svg'
 import { createUser } from '../../../api/getApi'
 
 
-const Chats = ({ mensajes }) => {
+const Chats = ({ mensajes}) => {
 
   const data = mensajes[0]
-  const [inputText, setInputText] = useState("")
+
+  const [inputText, setInputText] = useState([])
   const [mensajeEnviado, setMensajeEnviado] = useState([])
 
-
+  const today = new Date()
+  let value=""
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    /* createUser(inputText) */
     setMensajeEnviado([...mensajeEnviado, inputText])
-    setInputText("")
+    /* createUser(mensajeEnviado) */
+    setInputText([])
+    console.log(mensajeEnviado);
 
   }
 
   const handleForm = (e) => {
-    setInputText(e.target.value)
+    const texto = e.target.value
+    const id = data.id
+    console.log(id);
+    setInputText({
+      id: 0,
+      mensaje: texto,
+      hora: today.toLocaleTimeString()
+
+    })
+    console.log(inputText);
   }
 
 
@@ -60,8 +72,8 @@ const Chats = ({ mensajes }) => {
               {mensajeEnviado.map((e, index) => {
                 return (
                   <div key={index} className='chats__mensaje'>
-                    <h3 >{e}</h3>
-                    <p>hora</p>
+                    <h3 >{e.mensaje}</h3>
+                    <p>{e.hora}</p>
                   </div>
                 )
               })}
@@ -72,7 +84,7 @@ const Chats = ({ mensajes }) => {
             <form onSubmit={(e) => handleSubmit(e)} className='chats__formulario'>
               <img src={emote} alt="" />
               <img src={archivos} alt="" />
-              <input onChange={(e) => handleForm(e)} value={inputText} placeholder="Mensaje" className='chats__buscador' type="text" />
+              <input onChange={(e) => handleForm(e)} value={value} placeholder="Mensaje" className='chats__buscador' type="text" />
               <button type='submit'>
                 <img src={enviar} alt="" />
               </button>
