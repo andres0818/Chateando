@@ -20,8 +20,6 @@ function ListaChats({ data,getUsuario,dataUsuario,ultimoMensaje }) {
             <ul className='listaChats'>
                 {data === null ? <h1>Cargando...</h1> :
                     chatsLista.map((e, index) => {
-                        const lengthMensajes = e.mensajes.length - 1
-                        const infoMensaje = e.mensajes[lengthMensajes]
                         return (
 
                             <li key={index} className='listaChats__li'>
