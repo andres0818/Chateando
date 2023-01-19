@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import './ContenedorMensajeria.scss'
 import ListaChats from './ListaChats/ListaChats';
 
-const ContenedorMensajeria = ({ dataUsuario, data }) => {
+const ContenedorMensajeria = ({ dataUsuario, data, getUsuario }) => {
 
 
     const UsuarioValido = () => {
@@ -35,7 +35,10 @@ const ContenedorMensajeria = ({ dataUsuario, data }) => {
                         <div className='mensajes__containerBuscador'>
                             <input className='mensajes__buscador' type="text" placeholder='Buscaro iniciar un nuevo chat' />
                         </div>
-                        <ListaChats data={data} />
+                        <ListaChats
+                         dataUsuario={dataUsuario}
+                            getUsuario={getUsuario}
+                            data={data} />
                     </div>
                     <div>
                         <Outlet />
@@ -50,22 +53,7 @@ const ContenedorMensajeria = ({ dataUsuario, data }) => {
 
     return (
         <>
-       <UsuarioValido/> 
-            {/* <div className='mensajes' >
-                <div className='mensajes__menu'>
-
-                    <div className='mensajes__containerPerfil'>
-                        <img className='mensajes__perfil' src={dataUsuario.perfil} alt="" />
-                    </div>
-                    <div className='mensajes__containerBuscador'>
-                        <input className='mensajes__buscador' type="text" placeholder='Buscaro iniciar un nuevo chat' />
-                    </div>
-                </div>
-
-                <div>
-                    <Outlet />
-                </div>
-            </div> */}
+            <UsuarioValido />
         </>
     )
 }

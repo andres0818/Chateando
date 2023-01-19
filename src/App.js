@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import { getUsers } from "./api/getApi";
+import { getUsers, getMensaje } from "./api/getApi";
 import Login from "./pages/login/Login";
 import ContenedorMensajeria from "./pages/Mensajes/ContenedorMensajeria";
 
@@ -12,6 +12,7 @@ function App() {
 
   const [data, setData] = useState(null)
   const [dataUsuario, setDataUsario] = useState('')
+  const [mensajes, setMensajes] = useState([])
 
 
   const getData = async () => {
@@ -30,6 +31,21 @@ function App() {
 
 
 
+  const getUsuario = async (id) => {
+    try {
+      const resUsuario = await getMensaje(id)
+      setMensajes(resUsuario.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getUsuario()
+  }, [])
+
+
+
   const router = createBrowserRouter
 
     (
@@ -38,8 +54,16 @@ function App() {
         <>
           <Route path='/' element={<Login data={data} dataUsuario={dataUsuario} setDataUsario={setDataUsario} />} />
 
-          <Route path="/mensajes" element={<ContenedorMensajeria dataUsuario={dataUsuario} data={data} />} >
-            <Route path="/mensajes/:mensajesid" element={ <Chats dataUsuario={dataUsuario}/>} />
+          <Route path="/mensajes" element={
+            <ContenedorMensajeria
+              dataUsuario={dataUsuario} data={data}
+              getUsuario={getUsuario}
+            />} >
+            <Route path="/mensajes/:mensajesid" element={
+              <Chats
+                dataUsuario={dataUsuario}
+                mensajes={mensajes} />
+            } />
           </Route>
 
           <Route path='*' element={<h1>Ruta no encontrada</h1>} />

@@ -12,19 +12,19 @@
                     "sendBy": 0,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "1 mensaje enviado",
+                    "mensaje": "1 mensaje enviado de angie",
                     "flag": "Estado del mensaje"
                 },{
                     "sendBy": 1,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "2 mensaje enviado",
+                    "mensaje": "2 mensaje enviado de angie",
                     "flag": "Estado del mensaje"
                 },{
                     "sendBy": 2,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "3 mensaje enviado",
+                    "mensaje": "3 mensaje enviado de angie",
                     "flag": "Estado del mensaje"
                 }
             ]
@@ -41,19 +41,19 @@
                     "sendBy": 0,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "1 mensaje enviado",
+                    "mensaje": "1 mensaje enviado de andres",
                     "flag": "Estado del mensaje"
                 },{
                     "sendBy": 1,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "2 mensaje enviado",
+                    "mensaje": "2 mensaje enviado de andres",
                     "flag": "Estado del mensaje"
                 },{
                     "sendBy": 2,
                     "date": "fecha",
                     "hour": "hora",
-                    "mensaje": "3 mensaje enviado",
+                    "mensaje": "3 mensaje enviado de andres",
                     "flag": "Estado del mensaje"
                 }
             ]
