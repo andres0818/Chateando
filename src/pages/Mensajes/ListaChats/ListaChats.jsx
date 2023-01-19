@@ -30,9 +30,9 @@ function ListaChats({ data,getUsuario,dataUsuario,ultimoMensaje }) {
                                     <div className='listaChats__data'>
                                         <div className='listaChats__info' >
                                             <h1> {e.nombre} </h1>
-                                            <p>{mostrarUltimoMensaje.date}</p>
+                                            {mostrarUltimoMensaje===undefined?<p></p>:<p>{mostrarUltimoMensaje.date}</p>}
                                         </div>
-                                        <p>✔✔{mostrarUltimoMensaje.mensaje} </p>
+                                        {mostrarUltimoMensaje===undefined?<p></p>:<p>{mostrarUltimoMensaje.mensaje}</p>}
                                     </div>
                                 </Link>
                             </li>
